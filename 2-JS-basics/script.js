@@ -55,6 +55,19 @@ if (averageJohn > averageMike) {
 
 let averageMary = (97 + 134 + 105) / 3;
 
+console.log(averageJohn, averageMike, averageMary);
+
+if (averageJohn > averageMike && averageJohn > averageMary) {
+  console.log("John wins the games with a average score of " + averageJohn);
+} else if (averageMike > averageJohn && averageMike > averageMary) {
+  console.log("Mike wins the games with a average score of " + averageMike);
+} else if (averageMary > averageMike && averageMary > averageJohn) {
+  console.log("Mary wins the games with a average score of " + averageMary);
+} else {
+  console.log("There is a draw, :)");
+}
+
+
 
 
 
