@@ -94,8 +94,52 @@ let total = [totalPrice(bill[0]), totalPrice(bill[1]), totalPrice(bill[2])];
 
 console.log(total);
 
+/*
+Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
+1. For each of them, create an object with properties for their full name, mass, and height
+2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+
+Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+
+GOOD LUCK 😀
+*/
+
+let Mark = {
+  fullname: "Mark Smith",
+  mass: 64,
+  height: 1.72,
+  calcBMI: function() {
+    this.BMI = this.mass / this.height ^ 2;
+    return this.BMI;
+  }
+};
+
+let John = {
+  fullname: "John Andersen",
+  mass: 75,
+  height: 1.78,
+  calcBMI: function() {
+    this.BMI = this.mass / this.height ^ 2;
+    return this.BMI;
+  }
+};
 
 
+function higherBMI(a, b, BMIa, BMIb){
+  if (BMIa > BMIb) {
+    console.log(`${a} has higher BMI than ${b}. ${a} has a BMI of ${BMIa}.`);
+  } else if (BMIb > BMIa) {
+    console.log(`${b} has higher BMI than ${a}. ${b} has a BMI of ${BMIb}.`);
+  } else {
+    console.log(`${a} and ${b} have the same BMI.`);
+  }
+}
+
+// console.log(Mark.calcBMI());
+// console.log(John.calcBMI());
+
+higherBMI('Mark', 'John', Mark.calcBMI(), John.calcBMI());
 
 
 
