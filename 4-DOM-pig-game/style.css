@@ -103,6 +103,21 @@ body {
     font-size: 30px;
 }
 
+input {
+    position: absolute;
+    width: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    font-family: Lato;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 300;
+}
+
 button {
     position: absolute;
     width: 200px;
@@ -137,9 +152,13 @@ i {
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px;}
+.btn-new { top: 130px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
+.btn-text {
+    top: 520px;
+    outline: none;
+}
 
 .dice {
     position: absolute;
