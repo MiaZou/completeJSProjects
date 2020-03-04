@@ -161,6 +161,70 @@ game();
   console.log(score >= 5 - goodLuck);
 })(5);
 
+// Closures
+
+function retirement(retirementAge) {
+  var a = ' years left until retirement.';
+  return function(yearOfBirth) {
+    var age = 2020 - yearOfBirth;
+    console.log((retirementAge - age) + a);
+  }
+}
+
+var retirementUS = retirement(66);
+var retirementGermany = retirement(65);
+var retirementIceland = retirement(67);
+
+retirementGermany(1990);
+retirementUS(1990);
+retirementIceland(1990);
+
+// retirement(66)(1990);
+
+// Bind, Call, and Apply !!!
+
+var john = {
+  name: 'John',
+  age: 26,
+  job: 'teacher',
+  presentation: function(style, timeOfDay) {
+    if (style === 'formal') {
+      console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+    } else if (style === 'friendly') {
+      console.log('Hey! What\'s up? I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+    }
+  }
+}
+
+var emily = {
+  name: 'Emily',
+  age: 35,
+  job: 'designer'
+};
+
+john.presentation('formal', 'morning');
+
+// call - borrowing method! set this variable explicitly! 
+john.presentation.call(emily, 'friendly', 'afternoon'); // Method borrowing!
+
+// apply - takes argument as an array!
+// john.presentation.apply(emily, ['friendly', 'afternoon']);
+
+// bind - similar to call, but doesn't immediately calls the function, 
+// rather generates the copy of the function!
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning');
+johnFriendly('evening');
+
+
+
+
+
+
+
+
 
 
 
