@@ -1,3 +1,5 @@
+/*
+
 var john = {
   name: 'John',
   yearOfBirth: 1990,
@@ -215,8 +217,58 @@ john.presentation.call(emily, 'friendly', 'afternoon'); // Method borrowing!
 
 var johnFriendly = john.presentation.bind(john, 'friendly');
 
-johnFriendly('morning');
+johnFriendly('morning'); //carring! - creating a function based on another function with preset functions!
 johnFriendly('evening');
+
+var emilyFormal = john.presentation.bind(emily, 'formal');
+
+emilyFormal('afternoon');
+
+*/
+
+function Question(question, answers, correct) {
+  this.question = question;
+  this.answers = answers;
+  this.correct = correct;
+}
+
+var q1 = new Question('Is ECMAScript another name of JavaScript?', ['Yes', 'No'], 0);
+
+var q2 = new Question('Is JavaScript a fun tool to learn?', ['Yes', 'No'], 0);
+
+var q3 = new Question('Can you use JavaScript to build awesome application?', ['Yes', 'No'], 0);
+
+var Questions = [q1, q2, q3];
+
+console.log(Questions);
+
+function popQuizzes(){
+  let score = 0;
+  for (i=0; i<Questions.length; i++) {
+    let q = Questions[i];
+    console.log(q.question);
+    for (j=0; j<q.answers.length; j++) {
+      console.log(q.answers[j]);
+    }
+    let answer = prompt(q.question);
+
+    if (answer == q.correct) {
+      score += 1;
+      console.log('Correct!');
+    }
+  }
+  console.log('Your score is ' + score);
+}
+
+popQuizzes();
+
+
+
+
+
+
+
+
 
 
 
