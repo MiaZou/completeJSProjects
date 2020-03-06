@@ -36,6 +36,19 @@
       };
 
 
+      async function getRecipeAW() {
+        const IDs = await getIDs;
+        console.log(IDs);
+        const recipe = await getRecipe(IDs[2]);
+        console.log(recipe);
+        const related = await getRelated('Jonas');
+        console.log(related);
+      }
+
+      getRecipeAW();
+
+
+/*
       getIDs
       .then((IDs) => {
         console.log(IDs);
@@ -51,6 +64,7 @@
       .catch(error => {
         console.log(error);
       });
+*/
 
     </script>
 </body>
